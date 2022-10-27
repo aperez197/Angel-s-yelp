@@ -1,14 +1,18 @@
 require("dotenv").config();
-const express = require("express")
+const express = require("express");
 
 const app = express()
 
-app.get("/getRestaurants",(req,res)=> {
-   res.send("these are the restaurants");
+app.get("/getRestaurants",  (req, res) =>{
+    res.json({
+        status:"success",
+        restaurant:"mcdonals",
+    })
 });
+ 
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`server is up and listening on port ${port}`);
 });
